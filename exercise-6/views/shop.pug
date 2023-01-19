@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./css/main.css")
+        title #{docTitle}
+    body 
+        header.main-header
+            nav.main-header-nav
+                ul.main-header-item-list 
+                    li.main-header-items
+                        a.active(href="/") Shop 
+                    li.main-header-items
+                        a(href="/admin/add-product") Add Product 
+        main
+            .grid
+                if prods.length > 0
+                    each product in prods
+                        article.card.product-item 
+                            header.card-header
+                                h1.product-title #{product.title}
+                            .card-image 
+                                img(src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="book image")
+                            .card-content 
+                                h2.product-price $19.99
+                                p.product-description A very interesting book about so many even more things to discover.
+                            .card-actions 
+                                button.btn Add to Cart 
+                else
+                    h1 No Products
