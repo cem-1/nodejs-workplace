@@ -37,3 +37,13 @@
 - Builded template with pug syntax, used them in middlewares with res.render() method.
 - Working with dynamic contents
 - Outputting simple text, list and conditional statements (loops and if statements) with pug
+- Building layouts with pug
+
+# Exercise-7,8 // Template Engines - HandleBars & EJS
+- Registering template engines which not pre-built with express.js (like handlebar) with using .engine() 
+- HTML-like syntax of handlebars
+- Loops and conditional statements with handlebars
+- Passing conditional logics to handlebars files from .js files as boolean
+- Building layouts with handlebars {{{  }}}
+- HTML-like syntax of EJS and using Javascript syntax building loops and if conditionals.
+- Because EJS does not support building layouts, using partials/includes for getting benefit from layout-like features.

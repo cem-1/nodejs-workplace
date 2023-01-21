@@ -7,11 +7,12 @@ const products = [];
 const router = express.Router();
 
 router.get("/add-product", (req, res, next)=>{
-    console.log("Another in the middleware :)")
-    res.sendFile(path.join(rootDir, "views" , "add-product.html"))
+    console.log("GET /add-product triggered.");
+    res.render("add-product",{pageTitle: "Add Product", path:"/admin/add-product"});
 });
 
 router.post("/add-product", (req,res,next)=>{
+    console.log("POST /add-product triggered.")
     products.push({title: req.body.title});
     res.redirect('/');
 })
