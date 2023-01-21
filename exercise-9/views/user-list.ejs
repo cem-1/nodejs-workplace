@@ -1,0 +1,31 @@
+<%- include("includes/head.ejs") %>
+<link rel="stylesheet" href="/css/user-list.css">
+</head>
+<body>
+    <%- include("includes/navigation.ejs") %>
+
+    <main>
+        <% if (usrs.length > 0) { %>
+        <div class="grid">
+            <h1>User List</h1>
+            <% for (let user of usrs) { %>
+            <article class="card product-item">
+                <div class="user">
+                    <p class="user-name"><%= user.name %></p>
+                </div>
+                <div class="user">
+                    <p class="user-surname"><%= user.surname %></p>
+                </div>
+                <div class="user">
+                    <p class="user-email"><%= user.email %></p>
+                </div>
+            </article>
+            <% } %>
+        </div> 
+        <% } else { %>
+            <h1>No User Found!</h1>
+        <% }%>
+    </main>
+
+</body>
+</html>

@@ -47,3 +47,14 @@
 - Building layouts with handlebars {{{  }}}
 - HTML-like syntax of EJS and using Javascript syntax building loops and if conditionals.
 - Because EJS does not support building layouts, using partials/includes for getting benefit from layout-like features.
+
+# Exercise-9 // Practising
+- For exercise made mini website that has 4 pages; main, user-list, error, thank-you page.
+- Used express.js and all the GET request for these pages handled with middlewares
+- Main page has simply has subscription form with name, surname and email fields
+- Submiting form sends POST request and redirect to the thank-you page.
+- User List page output all the user inputs current session from main page
+- Any non-existed urls shows error page.
+- For POST request, body-parser helped with the parse the data.
+- Nodemon implemented.
+- Used EJS for templating and making layout

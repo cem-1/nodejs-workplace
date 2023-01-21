@@ -1,0 +1,29 @@
+<%- include("includes/head.ejs") %>
+</head>
+<body>
+    <%- include("includes/navigation.ejs") %>
+    <div class="subscribe-form">
+    <h1 class="welcome-text h1">Welcome!</h1>
+    <h3 class="welcome-text h1">Please fill the following form and subscribe us!</h3>
+    <main>
+        <form class="user-form" action="/add-user" method="POST">
+            <div class="form-control">
+                <label class="form-label" for="title">Name: </label>
+                <input class="form-input"type="text" name="name" id="name">
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="title">Surname: </label>
+                <input class="form-input" type="text" name="surname" id="surname">
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="title">E-mail: </label>
+                <input class="form-input" type="email" name="email" id="email">
+            </div>
+            <div class="center-btn">
+            <button class="form-btn" type="submit">Apply</button>
+            </div>
+        </form>
+    </main>
+    </div>
+</body>
+</html>
