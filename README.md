@@ -58,3 +58,13 @@
 - For POST request, body-parser helped with the parse the data.
 - Nodemon implemented.
 - Used EJS for templating and making layout
+
+# Exercise-10 // MVC Concept
+- The MVC Concept : Model-View-Controller
+- Middleware logics are in Controller
+- Defining request and response mechanism in Controller
+- Models created, data structure and storing/fetching them coded. 
+- Controller takes inputs from View with coming user request
+- Controller manipulates Model Data that came from View
+- Controller updates View with fetching data from Model
+
