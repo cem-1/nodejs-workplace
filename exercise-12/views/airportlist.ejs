@@ -1,0 +1,42 @@
+<%- include("./includes/head.ejs") %>
+
+</head>
+<body>
+
+ <%- include("./includes/navigation.ejs") %>
+
+    <h1 class="head-div">Airport List</h1>
+    <p class="head-div">This is the airport list in the database.</p>
+
+    <p class="head-div"> ----------------- </p>
+
+    <% for (let airport of airports) { %>
+        <article class="airport-entity head-div">
+            <header>
+                <p class="custom-form">  
+                    <%- airport.iatacode %>
+                    (<%- airport.latitude %>
+                    , <%- airport.longtitude %>) - <%- airport.name %> 
+                    - <%- airport.country %>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <input type="hidden" value="<%= airport._id %>" name="_id">
+                    <input type="hidden" value="<%= airport.iatacode %>" name="iatacode">
+                    <button class ="btn2" type="button" onclick="deleteAirport(this)">🗑</button>
+                </p>
+            </header>
+        </article>
+        <% } %>
+
+        <%- include("./includes/pagination.ejs", {currentPage: currentPage, nextPage:nextPage, previousPage:previousPage, lastPage: lastPage,hasNextPage: hasNextPage, hasPreviousPage:hasPreviousPage}) %>
+</body>
+</html>
+<script src="/js/admin.js"></script>
+
+<!--
+currentPage: page,
+hasNextPage: AIRPORTS_PER_PAGE * page < totalAirports,
+hasPreviousPage: page > 1,
+nextPage: page+1,
+previousPage: page -1,
+lastPage: Math.ceil(totalAirports / ITEMS_PER_PAGE),
+-->

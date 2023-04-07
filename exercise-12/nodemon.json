@@ -1,0 +1,10 @@
+{
+    "env": {
+        "MONGO_USER": "root",
+        "MONGO_PASSWORD": "59VXdV9mWzhD2aJM",
+        "MONGO_DEFAULT_DATABASE": "airwebsite",
+        "PORT": "8080",
+        "GMAIL_USERNAME": "...",
+        "GMAIL_PASSWORD": "..."
+    }
+}

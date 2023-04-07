@@ -1,0 +1,25 @@
+<header class="main-header">
+    
+    <nav>
+        <ul class="navbar">
+            <div class="navitems">
+            <li class="naventity left-nav-item"><a class="<%= path === '/' ? 'active' : ''%>" href="/">Main</a></li>
+            <% if (isAuthenticated) { %>
+            <li class="naventity left-nav-item"><a class="<%= path === '/addairport' ? 'active' : ''%>" href="/addairport">Add Airport</a></li>
+            <li class="naventity left-nav-item"><a class="<%= path === '/airportlist' ? 'active' : ''%>" href="/airportlist">Airport List</a></li>
+            <li class="naventity left-nav-item"><a class="<%= path === '/favorites' ? 'active' : ''%>" href="/favorites">Favorites</a></li>
+            <li class="naventity right-nav-item">
+                <form action="/logout" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+            <% } %>
+            <% if (!isAuthenticated) { %>
+            <li class="naventity right-nav-item"><a class="<%= path === '/login' ? 'active' : ''%> right-nav-item" href="/login">Login</a></li>
+            <li class="naventity right-nav-item"><a class="<%= path === '/signup' ? 'active' : ''%> right-nav-item" href="/signup">Sign-up</a></li>
+            <% } %>
+            </div>
+        </ul>
+    </nav>
+</header>

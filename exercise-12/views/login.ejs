@@ -1,0 +1,42 @@
+<%- include("./includes/head.ejs") %>
+
+</head>
+<body>
+
+<%- include("./includes/navigation.ejs") %>
+
+<main>
+
+<div class="head-div">
+    <h1>Log-in</h1>
+    <p>Log-in To Use Latest Features!</p>
+</div>
+
+<div class="search-div">
+    <form action="/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <label for="origin">E-mail</label><br>
+        <input 
+            type="email" 
+            id="email" 
+            name="email"
+            value="<%= oldInput.email %>"><br>
+
+        <label for="origin">Password</label><br>
+        <input 
+            type="password" 
+            id="password" 
+            name="password"
+            value="<%= oldInput.password %>"><br>
+
+        <a href="/reset">Reset Password</a><br><br>
+        <% if (errorMessage) { %>
+            <div class="warning"><%= errorMessage %></div>
+        <% } %><br>
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+body {
+    margin: 0;
+    /* remove margin from body */
+  }
+
+
+  
+.left-nav-item {
+    float: left;
+}
+
+.right-nav-item {
+  float: right;
+}
+  
+.naventity a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.naventity button {
+  display: block;
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar button:hover {
+  background-color: #111;
+}
+  
+  /* Change the link color to #111 (black) on hover */
+.navbar a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #04AA6D;
+  }
+
+
+  .btn {
+    display: inline;
+    padding: 0.2rem;
+    text-decoration: none;
+    font: inherit;
+    border: none;
+    color: green;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+    
+  .btn:hover,
+  .btn:active {
+    background-color:#04AA6D;
+    border: 1px solid #04AA6D;
+    color: white;
+  }
+  
+  .btn2 {
+    display: inline;
+    padding: 0.2rem;
+    text-decoration: none;
+    font: inherit;
+    border: none;
+    color: red;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+
+  .btn2:hover,
+  .btn2:active {
+    background-color:red;
+    border: 1px solid red;
+    color: white;
+  }
+
+  button {
+    font:inherit;
+    border: 1px solid black;
+    color: #201d0a;
+    background: white;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+.custom-form{
+    display: inline;
+}
+
+.warning{
+    color:red;
+    font-size: small;
+    text-align: center;
+}
+
+.search-div{
+    text-align: center;
+}
+
+.head-div {
+    text-align: center;
+}
+
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: top;
+    top: 0;
+    width: 100%;
+    float: none;
+    text-align: center;
+}
+
+.card-product-item {
+    border-radius: 15px;
+    background-image: linear-gradient(to top, #dcdddd 0%, #d0d3d4 100%);
+    width: 500px;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+}
+
+.line{
+    width: 500px;
+    border-color: rgba(0, 0, 0, 0.61);
+}
+
+.btn-favorite {
+    display: inline;
+    padding: 0.2rem;
+    text-decoration: none;
+    font: inherit;
+    border: none;
+    color: green;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+    
+  .btn-favorite:hover,
+  .btn-favorite:active {
+    background-color:#04AA6D;
+    border: 1px solid #04AA6D;
+    color: white;
+  }
+
+.modify-info {
+  font-size: 12px;
+}
+
+.password-requirement{
+  color:black;
+  font-size: small;
+  text-align: center;
+}
+
+.invalid{
+  border-color: red;
+}
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  padding: 0.5rem;
+  border: 1px solid rgb(49, 49, 49);
+  margin: 0 1rem;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+  background: rgb(49, 49, 49);
+  color: white;
+}
+
+.three-dot {
+  border:none;
+}

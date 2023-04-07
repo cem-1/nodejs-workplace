@@ -1,0 +1,49 @@
+<%- include("./includes/head.ejs") %>
+
+</head>
+<body>
+
+<%- include("./includes/navigation.ejs") %>
+
+    <div class="head-div">
+    <h1>Status Miles Calculator</h1>
+    <p>Enter Origin & Destination to check status miles.</p>
+    </div>
+
+    <div class="search-div">
+    <form action="/postOnd" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <label for="origin">Origin</label><br>
+        <input type="text" id="origin" name="origin"><br><br>
+        <label for="destination">Destination</label><br>
+        <input type="text" id="destination" name="destination"><br>
+        <% if (origin=="" || destination=="") { %> <p class="warning">! Please enter valid origin and destination.</p> <% } else { %> <br><br> <% } %>
+        <input type="submit" value="Submit"><br><br>
+    </form>
+    </div>
+    
+    <div class="head-div">
+    <br>
+    <% if (origin!="" && destination !="") { %> 
+    <% if (airports) { %>
+    <hr class="line">
+    <% for (let airport of airports) { %>
+        <article class="card-product-item">
+            <header class="card-header">
+                <p><%- airport.name %> 
+                    <% if (isAuthenticated) { %>
+                - <%- airport.country %> <a class="btn-favorite" href="/postfavorite/<%= airport._id %>">★</a></p>
+                    <% } %>
+                <p><%- airport.iatacode %>
+                    (<%- airport.latitude %>
+                   , <%- airport.longtitude %>) </p>
+            </header>
+        </article>
+        <% } %>
+        <hr class="line"><p><%- Math.round(kilometer).toFixed(2) %> km | <%- Math.round(miles).toFixed(2) %> miles</p>
+        <% } %>
+        <% } else { } %>
+    </div>
+
+</body>
+</html>

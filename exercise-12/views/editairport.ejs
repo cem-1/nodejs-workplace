@@ -1,0 +1,37 @@
+<%- include("./includes/head.ejs") %>
+
+</head>
+<body>
+
+<%- include("./includes/navigation.ejs") %>
+<div class="head-div">
+    <h1>Add/Edit Airport</h1>
+    <p>This is the page for editing an existed airport or adding a new airport in the database.</p>
+</div>
+
+<div class="search-div">
+    <form action="/<% if (editing) { %>postEditAirport<% } else { %>postAddAirport <% } %>" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <label for="origin">Iata Code</label><br>
+        <input type="text" id="iatacode" name="iatacode" <% if (editing || hasError ) { %>value="<%=airport.iatacode%>" <% } %>><br>
+        <label for="destination">Name</label><br>
+        <input type="text" id="name" name="name" <% if (editing || hasError ) { %>value="<%=airport.name%>"<% } %>><br>
+        <label for="destination">Country</label><br>
+        <input type="text" id="country" name="country" <% if (editing || hasError ) { %>value="<%=airport.country%>"<% } %>><br>
+        <label for="destination">Latitude</label><br>
+        <input type="number" step="any" id="latitude" name="latitude" <% if (editing || hasError ) { %>value="<%=airport.latitude%>"<% } %>><br>
+        <label for="destination">Longtitude</label><br>
+        <input type="number" step="any" id="longtitude" name="longtitude" <% if (editing || hasError ) { %>value="<%=airport.longtitude%>"<% } %>><br><br>
+        <% if (editing) { %>
+            <input type="hidden" value="<%= airport._id %>" name="airportId">
+            <p class="modify-info">This airport lastly modified by <b><%= user %></b> <br> <b><%= airport.modifyDate %></b> </p>
+        <% } %>
+        <% if (errorMessage) { %>
+            <div class="warning"><%= errorMessage %></div>
+        <% } %><br>
+        <button type="submit" value="Submit"><% if (editing) { %> Update Airport <% } else { %>Add Airport<% } %></button>
+    </form>
+</div>-
+
+</body>
+</html>

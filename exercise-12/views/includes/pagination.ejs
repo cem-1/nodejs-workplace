@@ -1,0 +1,26 @@
+<section class="pagination head-div">
+    <% if (currentPage != 1 && previousPage != 1) { %>
+        <a href="/airportlist?page=1">1</a>
+    <% } %>
+
+    <% if (hasPreviousPage) { %>
+        <% if (previousPage-1 >= 2) { %>
+            <a class="three-dot">...</a>
+        <% } %>    
+        <a href="/airportlist?page=<%= previousPage %>"><%= previousPage %></a>
+    <% } %>    
+
+    <a href="/airportlist?page=<%= currentPage %>" class="active"><%= currentPage %></a>
+
+    <% if (hasNextPage) { %>
+    <a href="/airportlist?page=<%= nextPage %>"><%= nextPage %></a>
+    <% if (lastPage-nextPage >= 2) { %>
+        <a class="three-dot">...</a>
+    <% } %>    
+    <% } %>
+
+    <% if (lastPage !== currentPage && nextPage !== lastPage) { %>
+        <a href="/airportlist?page=<%= lastPage %>"><%= lastPage %></a>
+    <% } %>
+
+</section>

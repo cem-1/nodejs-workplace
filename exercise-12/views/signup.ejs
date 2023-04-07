@@ -1,0 +1,53 @@
+<%- include("./includes/head.ejs") %>
+
+</head>
+<body>
+
+<%- include("./includes/navigation.ejs") %>
+<div class="head-div">
+    <h1>Sign-up</h1>
+    <p>Enroll now and get latest notifications!</p>
+</div>
+
+<div class="search-div">
+    <form action="/signup" method="POST" novalidate>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <label for="origin">Name</label><br>
+        <input type="text" 
+            id="name" 
+            name="name" 
+            value="<%= oldInput.name %>" 
+            class=" <%= validationErrors.find(e => e.param === 'name') ? 'invalid' : '' %>"><br>
+
+        <label for="origin">E-mail</label><br>
+        <input type="email" 
+            id="email" 
+            name="email" 
+            value="<%= oldInput.email %>" 
+            class=" <%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"><br>
+
+        <label for="origin">Password</label><br>
+        <input type="password" 
+            id="password" 
+            name="password" 
+            value="<%= oldInput.password %>"  
+            class=" <%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"><br>
+
+        <label for="origin">Confirm Password</label><br>
+        <input type="password" 
+            id="confirmPassword" 
+            name="confirmPassword" 
+            value="<%= oldInput.confirmPassword %>" 
+            class=" <%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>"><br><br>
+
+        <div class="password-requirement"><b>- Password requirements -</b><br> Minimum 5 character.<br>  Alphanumeric.</div>
+        <% if (errorMessage) { %>
+            <div class="warning"><%= errorMessage %></div>
+        <% } %><br>
+        <button type="submit" value="Submit">Join</button>
+    </form>
+</div>
+
+</body>
+</html>
